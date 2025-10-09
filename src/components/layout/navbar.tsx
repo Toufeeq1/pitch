@@ -8,6 +8,7 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navLinks = [
+    // These links dont work they are just for show
     { label: "Browse Events", href: "#browse" },
     { label: "Organizations", href: "#organizations" },
     { label: "How It Works", href: "#how-it-works" },
@@ -17,7 +18,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex h-16 items-center justify-between">
-          {/* Logo */}
+
           <div className="flex items-center gap-2">
             <div className="flex h-8 w-8 items-center justify-center rounded bg-primary text-primary-foreground font-semibold">
               E
@@ -25,8 +26,7 @@ export function Navbar() {
             <span className="text-lg font-semibold">EventHub</span>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -38,15 +38,13 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <Button variant="ghost">For Schools</Button>
             <Button>For Organizations</Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -54,9 +52,8 @@ export function Navbar() {
           </button>
         </nav>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t py-4 space-y-4">
+          <div className="lg:hidden border-t py-4 space-y-4">
             {navLinks.map((link) => (
               <a
                 key={link.label}
