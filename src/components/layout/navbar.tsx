@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Rocket } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Navbar() {
@@ -9,22 +9,24 @@ export function Navbar() {
 
   const navLinks = [
     // These links dont work they are just for show
-    { label: "Browse Events", href: "#browse" },
+    { label: "Home", href: "#home" },
+    { label: "Events", href: "#events" },
     { label: "Organizations", href: "#organizations" },
-    { label: "How It Works", href: "#how-it-works" },
+    { label: "My Calendar", href: "#my-calendar" },
   ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex h-16 items-center justify-between">
-
+          <button
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+          >
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded bg-primary text-primary-foreground font-semibold">
-              E
-            </div>
-            <span className="text-lg font-semibold">EventHub</span>
+             <Rocket className="w-6 h-6 text-[#2463eb]" />
+            <span className="text-lg font-semibold">Space Event Hub</span>
           </div>
+          </button>
 
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -39,8 +41,8 @@ export function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Button variant="ghost">For Schools</Button>
-            <Button>For Organizations</Button>
+            <Button variant="ghost">Sign In</Button>
+            <Button>Get Started</Button>
           </div>
 
           <button
@@ -66,9 +68,9 @@ export function Navbar() {
             ))}
             <div className="pt-4 space-y-2">
               <Button variant="ghost" className="w-full">
-                For Schools
+                Sign In 
               </Button>
-              <Button className="w-full">For Organizations</Button>
+              <Button className="w-full">Get Started</Button>
             </div>
           </div>
         )}
