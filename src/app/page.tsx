@@ -1,13 +1,11 @@
-import { Button } from "@/components/ui/button"
+// app/page.tsx
+import { HeroSection } from "@/components/layout/HeroSection";
 
-export default function Home() {
+
+export default function Page() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold">PitchApp MVP 🚀</h1>
-       <div className="p-8">
-      <Button>Click me</Button>
-    </div>
+    <main className="min-h-screen bg-white">
+      <HeroSection />
     </main>
-    
   );
 }
