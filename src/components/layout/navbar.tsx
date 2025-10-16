@@ -8,9 +8,9 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    // These links dont work they are just for show
-    { label: "Home", href: "#home" },
-    { label: "Events", href: "#events" },
+    
+    { label: "Home", href: "/" },
+    { label: "Events", href: "/events" },
     { label: "Organizations", href: "#organizations" },
     { label: "My Calendar", href: "#my-calendar" },
   ];
