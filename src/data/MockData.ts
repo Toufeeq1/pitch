@@ -111,3 +111,89 @@ export const events: Event[] = [
     maxAttendees: 20,
   },
 ]
+
+
+export interface Organisation {
+  id: string
+  name: string
+  description: string
+  location: string
+  image: string
+  focus: string[]
+  featured: boolean
+}
+
+export const organisations: Organisation[] = [
+  {
+    id: "org-1",
+    name: "South African Space Agency",
+    description: "Leading space research and development organization in Africa.",
+    location: "Pretoria, South Africa",
+    image: "/space-agency-building.jpg",
+    focus: ["Satellite Technology", "Space Research", "STEM Education"],
+    featured: true,
+  },
+  {
+    id: "org-2",
+    name: "RoboTech Academy",
+    description: "Premier robotics education and innovation hub for all ages.",
+    location: "Johannesburg, South Africa",
+    image: "/robotics-lab.jpg",
+    focus: ["Robotics", "Programming", "Engineering"],
+    featured: true,
+  },
+  {
+    id: "org-3",
+    name: "South African Astronomical Society",
+    description: "Dedicated to advancing astronomy education and research.",
+    location: "Cape Town, South Africa",
+    image: "/observatory-telescope.jpg",
+    focus: ["Astronomy", "Stargazing", "Research"],
+    featured: false,
+  },
+  {
+    id: "org-4",
+    name: "Engineering Council of South Africa",
+    description: "Professional body promoting engineering excellence and innovation.",
+    location: "Johannesburg, South Africa",
+    image: "/engineering-office.jpg",
+    focus: ["Engineering", "Professional Development", "Innovation"],
+    featured: false,
+  },
+  {
+    id: "org-5",
+    name: "Data Science Institute",
+    description: "Cutting-edge data science research and training center.",
+    location: "Durban, South Africa",
+    image: "/data-science-lab.png",
+    focus: ["Data Science", "AI", "Analytics"],
+    featured: false,
+  },
+  {
+    id: "org-6",
+    name: "Physics Department UCT",
+    description: "University research center for advanced physics studies.",
+    location: "Cape Town, South Africa",
+    image: "/university-physics-lab.jpg",
+    focus: ["Physics", "Quantum Mechanics", "Cosmology"],
+    featured: false,
+  },
+  {
+    id: "org-7",
+    name: "Earth Observation Centre",
+    description: "Satellite imagery analysis and environmental monitoring.",
+    location: "Johannesburg, South Africa",
+    image: "/satellite-control-center.jpg",
+    focus: ["Satellites", "Earth Observation", "Environmental Science"],
+    featured: false,
+  },
+  {
+    id: "org-8",
+    name: "Science Museum SA",
+    description: "Interactive science exhibitions and educational programs.",
+    location: "Johannesburg, South Africa",
+    image: "/science-museum.jpg",
+    focus: ["STEM Education", "Public Engagement", "Exhibitions"],
+    featured: false,
+  },
+]
