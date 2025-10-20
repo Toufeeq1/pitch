@@ -98,8 +98,6 @@ The application will open at `http://localhost:3000`
 - **Nthabiseng Moloi** -- [GitHub](https://github.com/Nthabi2905)
 - **Sydney Papier** -- [GitHub](https://github.com/sydney-papier-19)
 
-See also the list of [contributors](https://github.com/yourusername/space-event-hub/contributors) who participated in this project.
-
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
