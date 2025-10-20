@@ -39,7 +39,7 @@ Space Event Hub is a comprehensive platform designed to bridge the gap between S
 1. Clone the repository
 ```bash
 git clone https://github.com/Toufeeq1/pitch.git
-cd space-event-hub
+cd pitch
 ```
 
 2. Install dependencies
