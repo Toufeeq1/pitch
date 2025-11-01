@@ -37,9 +37,9 @@ export function EventDirectory() {
         .replace(/[-:]/g, "")
         .split(".")[0] + "Z";
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-      event.title
+      event.title,
     )}&dates=${startDate}/${endDate}&details=${encodeURIComponent(
-      event.description
+      event.description,
     )}&location=${encodeURIComponent(event.location)}`;
     window.open(googleCalendarUrl, "_blank");
   };
@@ -60,7 +60,6 @@ export function EventDirectory() {
             leading space organisations
           </p>
 
-          {/* Filters */}
           <div className="flex flex-wrap gap-4 mb-8 justify-center">
             <Select value={filterType} onValueChange={setFilterType}>
               <SelectTrigger className="w-[200px] bg-white">
@@ -92,7 +91,6 @@ export function EventDirectory() {
             </Select>
           </div>
 
-          {/* Event Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredEvents.map((event, index) => (
               <motion.div
@@ -103,7 +101,6 @@ export function EventDirectory() {
                 whileHover={{ y: -5 }}
               >
                 <Card className="overflow-hidden h-full flex flex-col hover:shadow-xl transition-all hover:scale-[1.02] border-blue-200 bg-gradient-to-br from-white to-blue-50/50">
-                  {/* Event Type Badge */}
                   <div className="p-4 pb-0">
                     <div className="flex justify-between items-start mb-3">
                       <Badge
@@ -111,10 +108,10 @@ export function EventDirectory() {
                           event.type === "Workshop"
                             ? "bg-[#2463eb] text-white"
                             : event.type === "Webinar"
-                            ? "bg-[#38bdf8] text-white"
-                            : event.type === "Visit"
-                            ? "bg-[#1e40af] text-white"
-                            : "bg-[#0284c7] text-white"
+                              ? "bg-[#38bdf8] text-white"
+                              : event.type === "Visit"
+                                ? "bg-[#1e40af] text-white"
+                                : "bg-[#0284c7] text-white"
                         }
                       >
                         {event.type}
@@ -134,7 +131,6 @@ export function EventDirectory() {
                       {event.description}
                     </p>
 
-                    {/* Event Details */}
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center gap-2 text-sm text-gray-600">
                         <Calendar className="w-4 h-4 text-[#2463eb]" />
@@ -160,7 +156,6 @@ export function EventDirectory() {
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
                   <div className="mt-auto p-4 pt-0 flex gap-2">
                     <Button
                       className="flex-1 bg-[#2463eb] hover:bg-[#2463eb]/90 text-white gap-2"

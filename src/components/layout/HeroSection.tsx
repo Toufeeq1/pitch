@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "motion/react"
-import { Button } from "@/components/ui/button"
-import { Rocket, Users, Building2 } from "lucide-react"
-
+import { motion } from "motion/react";
+import { Button } from "@/components/ui/button";
+import { Rocket, Users, Building2 } from "lucide-react";
 
 export function HeroSection() {
   const handleNavigate = (section: string) => {
@@ -18,7 +17,7 @@ export function HeroSection() {
     y: Math.random() * 100,
     size: Math.random() * 3 + 1,
     duration: Math.random() * 3 + 2,
-  }))
+  }));
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#1d283a] via-[#1e40af] to-[#2463eb]/30">
@@ -32,7 +31,12 @@ export function HeroSection() {
               top: `${star.y}%`,
               width: `${star.size}px`,
               height: `${star.size}px`,
-              backgroundColor: star.id % 3 === 0 ? "#38bdf8" : star.id % 2 === 0 ? "#2463eb" : "#ffffff",
+              backgroundColor:
+                star.id % 3 === 0
+                  ? "#38bdf8"
+                  : star.id % 2 === 0
+                    ? "#2463eb"
+                    : "#ffffff",
             }}
             animate={{
               opacity: [0.2, 1, 0.2],
@@ -47,7 +51,10 @@ export function HeroSection() {
         ))}
       </div>
 
-      <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        className="absolute inset-0 w-full h-full opacity-10"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <motion.ellipse
           cx="50%"
           cy="50%"
@@ -57,7 +64,11 @@ export function HeroSection() {
           stroke="#2463eb"
           strokeWidth="2"
           animate={{ rotate: 360 }}
-          transition={{ duration: 60, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+          transition={{
+            duration: 60,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+          }}
           style={{ transformOrigin: "center" }}
         />
         <motion.ellipse
@@ -69,7 +80,11 @@ export function HeroSection() {
           stroke="#21c45d"
           strokeWidth="2"
           animate={{ rotate: -360 }}
-          transition={{ duration: 80, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+          transition={{
+            duration: 80,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+          }}
           style={{ transformOrigin: "center" }}
         />
       </svg>
@@ -84,7 +99,11 @@ export function HeroSection() {
           <motion.div
             className="mb-6"
             animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+            transition={{
+              duration: 4,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
           >
             <Rocket className="w-20 h-20 mx-auto text-[#2463eb] mb-4" />
           </motion.div>
@@ -92,7 +111,8 @@ export function HeroSection() {
           <h1 className="text-white mb-6">Space Education Hub</h1>
 
           <p className="text-xl text-gray-200 mb-12 max-w-2xl mx-auto">
-            Connecting schools and communities with South Africa&apos;s space and STEM opportunities
+            Connecting schools and communities with South Africa&apos;s space
+            and STEM opportunities
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center mb-20">
@@ -122,13 +142,15 @@ export function HeroSection() {
             {[
               {
                 title: "Explore Events",
-                description: "Discover workshops, webinars, and visits from space organisations",
+                description:
+                  "Discover workshops, webinars, and visits from space organisations",
                 icon: "🎯",
                 gradient: "from-blue-50 to-blue-100",
               },
               {
                 title: "Connect & Collaborate",
-                description: "Bridge the gap between schools and space education providers",
+                description:
+                  "Bridge the gap between schools and space education providers",
                 icon: "🤝",
                 gradient: "from-sky-50 to-sky-100",
               },
@@ -157,5 +179,5 @@ export function HeroSection() {
 
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-50 to-transparent" />
     </div>
-  )
+  );
 }

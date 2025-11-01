@@ -1,30 +1,36 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "motion/react"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Building2, MapPin, ExternalLink, Star, Mail } from "lucide-react"
-import { organisations } from "@/data/MockData"
-import { ImageWithFallback } from "./ImageFallback"
+import { useState } from "react";
+import { motion } from "motion/react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Building2, MapPin, ExternalLink, Star, Mail } from "lucide-react";
+import { organisations } from "@/data/MockData";
+import { ImageWithFallback } from "./ImageFallback";
 
 export function OrganisationDirectory() {
-  const [hoveredId, setHoveredId] = useState<string | null>(null)
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const featuredOrgs = organisations.filter((org) => org.featured)
-  const regularOrgs = organisations.filter((org) => !org.featured)
+  const featuredOrgs = organisations.filter((org) => org.featured);
+  const regularOrgs = organisations.filter((org) => !org.featured);
 
   return (
     <div className="py-16 px-6 bg-gradient-to-b from-white via-blue-50/30 to-sky-50">
       <div className="container mx-auto max-w-6xl">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <h2 className="text-[#1d283a] mb-3 text-center">Space Organisations</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-[#1d283a] mb-3 text-center">
+            Space Organisations
+          </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Connect with South Africa&apos;s leading space agencies, companies, and STEM organisations
+            Connect with South Africa&apos;s leading space agencies, companies,
+            and STEM organisations
           </p>
 
-          {/* Featured Organisations Spotlight */}
           {featuredOrgs.length > 0 && (
             <div className="mb-16">
               <div className="flex items-center gap-2 mb-6">
@@ -51,10 +57,14 @@ export function OrganisationDirectory() {
                         />
                         <motion.div
                           className="absolute inset-0 bg-gradient-to-t from-[#1d283a]/80 to-transparent"
-                          animate={{ opacity: hoveredId === org.id ? 0.9 : 0.6 }}
+                          animate={{
+                            opacity: hoveredId === org.id ? 0.9 : 0.6,
+                          }}
                         />
                         <div className="absolute bottom-4 left-4 right-4">
-                          <Badge className="bg-[#21c45d] text-white mb-2">Featured</Badge>
+                          <Badge className="bg-[#21c45d] text-white mb-2">
+                            Featured
+                          </Badge>
                         </div>
                       </div>
 
@@ -66,7 +76,9 @@ export function OrganisationDirectory() {
                           </div>
                         </div>
 
-                        <p className="text-gray-600 text-sm mb-4">{org.description}</p>
+                        <p className="text-gray-600 text-sm mb-4">
+                          {org.description}
+                        </p>
 
                         <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
                           <MapPin className="w-4 h-4 text-[#2463eb]" />
@@ -75,18 +87,29 @@ export function OrganisationDirectory() {
 
                         <div className="flex flex-wrap gap-2 mb-4">
                           {org.focus.map((focus) => (
-                            <Badge key={focus} variant="outline" className="text-xs">
+                            <Badge
+                              key={focus}
+                              variant="outline"
+                              className="text-xs"
+                            >
                               {focus}
                             </Badge>
                           ))}
                         </div>
 
                         <div className="flex gap-2">
-                          <Button className="flex-1 bg-[#2463eb] hover:bg-[#2463eb]/90 text-white gap-2" size="sm">
+                          <Button
+                            className="flex-1 bg-[#2463eb] hover:bg-[#2463eb]/90 text-white gap-2"
+                            size="sm"
+                          >
                             <Mail className="w-4 h-4" />
                             Contact
                           </Button>
-                          <Button variant="outline" size="sm" className="gap-2 bg-transparent">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="gap-2 bg-transparent"
+                          >
                             <ExternalLink className="w-4 h-4" />
                           </Button>
                         </div>
@@ -98,7 +121,6 @@ export function OrganisationDirectory() {
             </div>
           )}
 
-          {/* All Organisations Grid */}
           <div className="mb-6">
             <h3 className="text-[#1d283a] mb-6">All Organisations</h3>
           </div>
@@ -128,7 +150,9 @@ export function OrganisationDirectory() {
                       <h4 className="text-[#1d283a]">{org.name}</h4>
                     </div>
 
-                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">{org.description}</p>
+                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                      {org.description}
+                    </p>
 
                     <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
                       <MapPin className="w-3 h-3 text-[#2463eb]" />
@@ -137,14 +161,21 @@ export function OrganisationDirectory() {
 
                     <div className="flex flex-wrap gap-1 mb-4">
                       {org.focus.slice(0, 3).map((focus) => (
-                        <Badge key={focus} variant="outline" className="text-xs">
+                        <Badge
+                          key={focus}
+                          variant="outline"
+                          className="text-xs"
+                        >
                           {focus}
                         </Badge>
                       ))}
                     </div>
 
                     <div className="mt-auto flex gap-2">
-                      <Button className="flex-1 bg-[#2463eb] hover:bg-[#2463eb]/90 text-white" size="sm">
+                      <Button
+                        className="flex-1 bg-[#2463eb] hover:bg-[#2463eb]/90 text-white"
+                        size="sm"
+                      >
                         View Details
                       </Button>
                     </div>
@@ -156,5 +187,5 @@ export function OrganisationDirectory() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }

@@ -8,7 +8,6 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    
     { label: "Home", href: "/" },
     { label: "Events", href: "/events" },
     { label: "Organizations", href: "/organizations" },
