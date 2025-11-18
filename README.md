@@ -123,4 +123,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ---
 
-Made with ❤️ for South Africa's space education community
+Made with ❤️ for South Africa's space education community.
